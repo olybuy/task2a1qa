@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "gameName": "Dota 2",
+    "languageList": [
+      "english",
+      "spanish",
+      "french",
+      "german",
+      "italian",
+      "russian",
+      "japanese",
+      "portuguese",
+      "brazilian"
+    ]
+}

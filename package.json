@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chromedriver": "^111.0.0",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "mocha-param": "^2.0.1",
+    "selenium-webdriver": "^4.8.1",
+    "webdriver-manager": "^12.1.9"
+  },
+  "name": "a1qa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeout 60000"
+  },
+  "author": "Kramskaya, Marina",
+  "license": "ISC",
+  "description": "Steam",
+  "type": "module"
+}
