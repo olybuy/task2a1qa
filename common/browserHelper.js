@@ -1,5 +1,6 @@
 import {Builder, Capabilities} from "selenium-webdriver";
 import ConfigData from "./configData.js";
+import chrome from "selenium-webdriver/ie.js";
 
 class BrowserHelper {
     static #WEBDRIVER = null;
@@ -9,7 +10,7 @@ class BrowserHelper {
             if (ConfigData.config.browser === 'chrome') {
                 let chromeCapabilities = Capabilities.chrome();
                 let chromeOptions = {
-                    'args': ['--incognito']
+                    'args': ['--incognito', '--headless']
                 };
                 chromeCapabilities.set('goog:chromeOptions', chromeOptions);
                 this.#WEBDRIVER = new Builder().withCapabilities(chromeCapabilities).forBrowser('chrome').build();
