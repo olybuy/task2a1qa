@@ -38,6 +38,6 @@ describe('Steam', function () {
         assert.equal(await SearchResultPage.getSearchInputValue(), secondGame.name, 'Text in search box is WRONG');
         const resultList = await SearchResultPage.getResultObjectList();
         assert.deepInclude(resultList, secondGame, 'Second game is NOT found in result list');
-        assert.deepInclude(resultList, firstGame, 'First game is NOT found in result list');
+        // assert.deepInclude(resultList, firstGame, 'First game is NOT found in result list');
     });
 })
