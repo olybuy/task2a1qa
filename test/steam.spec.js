@@ -17,15 +17,15 @@ describe('Steam', function () {
         await BrowserHelper.quitBrowser();
     })
 
-    // it('Should check privacy policy', async function () {
-    //     await HomePage.clickPrivacyPolicy();
-    //     await BrowserHelper.switchToTab(1);
-    //     const expectedLanguageList = TestData.data.languageList;
-    //     const actualLanguageList = await PrivacyPolicy.getAllLanguagesList();
-    //     assert.deepEqual(actualLanguageList, expectedLanguageList, 'NOT all languages are supported');
-    //     const currentYear = (new Date).getFullYear();
-    //     assert.include(await PrivacyPolicy.getPolicyDateText(), currentYear, 'Privacy Policy has NOT a current year');
-    // })
+    it('Should check privacy policy', async function () {
+        await HomePage.clickPrivacyPolicy();
+        await BrowserHelper.switchToTab(1);
+        const expectedLanguageList = TestData.data.languageList;
+        const actualLanguageList = await PrivacyPolicy.getAllLanguagesList();
+        assert.deepEqual(actualLanguageList, expectedLanguageList, 'NOT all languages are supported');
+        const currentYear = (new Date).getFullYear();
+        assert.include(await PrivacyPolicy.getPolicyDateText(), currentYear, 'Privacy Policy has NOT a current year');
+    })
 
     it('Should find game in results of search', async function () {
         const searchName = TestData.data.gameName;
