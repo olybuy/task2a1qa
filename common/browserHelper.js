@@ -10,7 +10,7 @@ class BrowserHelper {
             if (ConfigData.config.browser === 'chrome') {
                 let chromeCapabilities = Capabilities.chrome();
                 let chromeOptions = {
-                    'args': ['--incognito', '--headless']
+                    'args': ['--incognito']
                 };
                 chromeCapabilities.set('goog:chromeOptions', chromeOptions);
                 this.#WEBDRIVER = new Builder().withCapabilities(chromeCapabilities).forBrowser('chrome').build();
@@ -36,6 +36,10 @@ class BrowserHelper {
         );
         const allTabs = await this.getWebdriver().getAllWindowHandles();
         await this.getWebdriver().switchTo().window(allTabs[index]);
+    }
+
+    static async scroll(element) {
+        await this.getWebdriver().executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
 

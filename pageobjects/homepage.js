@@ -10,8 +10,11 @@ class HomePage {
     }
 
     async clickPrivacyPolicy() {
-        await BrowserHelper.getWebdriver().wait(until.elementLocated(By.linkText("Политика конфиденциальности")), ConfigData.config.timeout);
-        await BrowserHelper.getWebdriver().findElement(By.linkText("Политика конфиденциальности")).click();
+        const element =  await BrowserHelper.getWebdriver().findElement(By.xpath('//*[@id="footer_text"]/div[2]/a[1]'));
+        console.log('element is: ' + element)
+        await BrowserHelper.scroll(element);
+        await BrowserHelper.getWebdriver().wait(until.elementLocated(By.xpath('//*[@id="footer_text"]/div[2]/a[1]')), ConfigData.config.timeout);
+        await element.click();
     }
 }
 
